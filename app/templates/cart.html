@@ -5,16 +5,16 @@
     <table>
         <tr>
             <th>Product</th>
-            <th>Quantity</th>
+            <th style="padding: 0 50px">Quantity</th>
             <th>Total Price</th>
-
         </tr>
         {% for item in cart %}
         <tr>
             <td>{{ item.product.name }}</td>
-            <td>{{ item.quantity }}</td>
-            <td>{{ item.total_price }}</td>
-            <td><form method="POST" action="/app/allproducts/remove/">
+            <td style="padding: 0 70px">{{ item.quantity }}</td>
+            <td style="padding: 0 20px">{{ item.total_price }}</td>
+
+            <td style="padding: 0 20px"><form method="POST" action="/app/allproducts/remove/">
             {% csrf_token %}
             <input type="hidden" name="id" value="{{ item.object_id }}">
                 <button type="submit">remove</button>
